@@ -1,0 +1,44 @@
+{
+  "name": "@inedge/design-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Workspace root for @inedge/designer (library) and playground (docs site).",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter=playground dev",
+    "build": "bun run --filter='@inedge/designer' build && bun run --filter=playground build",
+    "build:lib": "bun run --filter='@inedge/designer' build",
+    "build:app": "bun run --filter=playground build",
+    "preview": "bun run --filter=playground preview",
+    "test": "bun run --filter='@inedge/designer' test",
+    "test:bench": "bun run --filter='@inedge/designer' test:bench",
+    "typecheck": "bun run --filter='@inedge/designer' typecheck && bun run --filter=playground typecheck",
+    "lint": "bunx biome check . && bunx eslint .",
+    "lint:fix": "bunx biome check --write . && bunx eslint --fix .",
+    "format": "bunx biome format --write .",
+    "changeset": "bunx changeset",
+    "version-packages": "bunx changeset version",
+    "release": "bun run build:lib && bunx changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "@changesets/cli": "^2.27.0",
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^17.4.0",
+    "lefthook": "^1.10.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.3.0"
+  },
+  "packageManager": "bun@1.3.11"
+}

@@ -1,0 +1,9 @@
+/* @inedge/designer — compiled styles.
+ * Wrapped in @layer designer so consumers that declare
+ * `@layer app, designer;` can override us predictably.
+ * Populated with Tailwind v4 + --ds-* theme vars in Phase 13.
+ */
+
+@layer designer {
+  /* populated in Phase 2 (canvas.css) + Phase 13 (theme + utilities) */
+}

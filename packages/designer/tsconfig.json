@@ -1,0 +1,14 @@
+{
+  "extends": "../../tooling/tsconfig/lib.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["react", "react-dom"]
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules", "tests"]
+}
