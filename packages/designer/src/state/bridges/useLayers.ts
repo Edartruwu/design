@@ -42,7 +42,6 @@ export function useLayers(): readonly Layer[] {
   // Layer[] reference across frames during drag: key changes only on
   // structural bumps, not on cssVar ticks. We intentionally don't read `key`
   // inside the callback — its role is purely to bust the memo cache.
-  // biome-ignore lint/correctness/useExhaustiveDependencies: key is a cache-invalidation token
   // eslint-disable-next-line react-hooks/exhaustive-deps
   return useMemo(() => buildLayerSnapshot(store.getState(), store.signals), [store, key]);
 }
